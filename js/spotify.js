@@ -2244,7 +2244,7 @@ $(document).ready(function(){
               <button onclick="onf('${item.id}')" class="featuresinfo" id="featuresinfo">Features</button>
               <button onclick="ona('${item.id}')" class="analysisinfo" id="analysisinfo">Analysis</button>
               <button onclick="onl('${item.artists[0].name} ${item.name}')" class="lyricsinfo" id="lyrics">Lyrics</button>
-              <button onclick="von('${item.artists[0].name} ${item.name}')" class="videoinfo" id="mvideo">Video</button>
+              <button onclick="von('${item.artists[0].name} ${item.name}')" class="videoinfo" id="bmvideo">Video</button>
               </div>  
               <div id="overlay" onclick="off()">
               <div id="voverlay" onclick="voff()">
@@ -2302,6 +2302,6 @@ function musicvideo (m_vid){
     music_video =  `
     <iframe width="720" height="480" src="https://www.youtube.com/embed/${data.items[0].id.videoId}" frameborder="0"  allowfullscreen></iframe>
     `   
-    $("#voverlay").html(music_video)     
+    $("#mvideo").html(music_video)     
 })
 };
