@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/index1.css">
+
+</head>
+<body>
+  <div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="./pages/search.html">Search</a>
+  <!--     <a href="lastfm.html">Data</a> -->
+  </div>
+  <form>
+    <input class = "search" type="text" placeholder="Search..." id="search">
+    <button type="submit" value="Search"><i class="fa fa-search"></i></button>
+    <select class="type" id="type">
+      <option value="track">Tracks</option>
+      <option value="album">Albums</option>
+      <option value="playlist">Playlists</option>
+    </select>
+  </form>
+  <a href="http://localhost:8888/">
+    <button class='slogin'>Login with Spotify</button>
+  </a>
+  <div class="search-container">
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="songs">
+          <div id="tracks"></div>
+          <div id="buttons"></div>
+        </div>            
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div id="album"></div>
+      </div>
+      <div class="col-md-12">
+        <div id="playlist"></div>
+    </div>
+      </div>
+    
+  </div>
+<div id="bg" class="bg"></div>
+<div id ="bg-text" class="bg-text">
+  <h1>Yaskier</h1>
+  <h2>Pluck all your chords</h2>
+  <h2>in one place</h2>
+  </div>
+</form>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src = "./js/spotify.js"></script>
+</html>
