@@ -2163,7 +2163,8 @@ spotifyApi.getPlaylistTracks('4KbVm88FtGdO3pGRwkCWko',{limit:12},function(err,da
         
         <button onclick="onf('${item.track.id}')" class="featuresinfo" id="featuresinfo">Features</button>
         <button onclick="ona('${item.track.id}')" class="analysisinfo" id="analysisinfo">Analysis</button>
-        <button onclick="onl('${item.track.artists[0].name} ${item.track.name}')" class="lyricsinfo" id="lyrics">Lyrics</button> 
+        <button onclick="onl('${item.track.artists[0].name} ${item.track.name}')" class="lyricsinfo" id="lyrics">Lyrics</button>
+        <button onclick="von('${item.track.artists[0].name} ${item.track.name}')" class="videoinfo" id="mvideo">Video</button>
         </div>   
         <div class="overlay "id="overlay" onclick="off()">
         <div id="text"></div>
