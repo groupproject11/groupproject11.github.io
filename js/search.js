@@ -64,7 +64,7 @@ $(document).ready(function(){
             $("#videos").empty()
             data.items.forEach(item => {
                 video =  `
-                <iframe width="480" height="271" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0"  allowfullscreen></iframe>
+                <iframe width="480" height="271" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0"  allowfullscreen></iframe>
                 `               
                 $("#videos").append(video)
            });
@@ -127,7 +127,7 @@ function instrument(instrument, maxResults){
     $("#videos").empty()
     data.items.forEach(item => {
         video =  `
-        <iframe width="480" height="271" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allow="picture-in-picture" allowfullscreen></iframe>
+        <iframe width="480" height="271" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allow="picture-in-picture" allowfullscreen></iframe>
         `               
         $("#videos").append(video)
    });
@@ -141,7 +141,7 @@ function reviews(playlistID,maxResults){
     $("#videos").empty()
       data.items.forEach(item =>{
         video =  `
-        <iframe width="480" height="271" src="http://www.youtube.com/embed/${item.snippet.resourceId.videoId}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="271" src="https://www.youtube.com/embed/${item.snippet.resourceId.videoId}" frameborder="0" allowfullscreen></iframe>
         `               
         $("#videos").append(video)
       });
@@ -154,7 +154,7 @@ function channelplaylist(channelID,maxResults){
     $("#videos").empty()
       data.items.forEach(items =>{
         video =  `
-        <iframe width="480" height="271" src="http://www.youtube.com/embed/videoseries?list=${items.id}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="271" src="https://www.youtube.com/embed/videoseries?list=${items.id}" frameborder="0" allowfullscreen></iframe>
         `               
         $("#videos").append(video)
       });
@@ -167,7 +167,7 @@ function channelvideos(channelID,maxResults){
     $("#videos").empty()
       data.items.forEach(item =>{
         video =  `
-        <iframe width="480" height="271" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="271" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
         `               
         $("#videos").append(video)
       });
@@ -180,7 +180,7 @@ function playlists(search,maxResults){
     $("#videos").empty()
     data.items.forEach(item => {
         video =  `
-        <iframe width="720" height="415" src="http://www.youtube.com/embed/videoseries?list=${item.id.playlistId}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="720" height="415" src="https://www.youtube.com/embed/videoseries?list=${item.id.playlistId}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         `               
         $("#videos").append(video)
    });
@@ -194,7 +194,7 @@ function theorySearch(theory, maxResults){
     $("#videos").empty()
     data.items.forEach(item => {
         video =  `
-        <iframe width="480" height="271" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="271" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
         `               
         $("#videos").append(video)
    });
