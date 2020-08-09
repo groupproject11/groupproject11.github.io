@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>search</title>
+        <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <!-- Load icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/search.css">
+    </head>
+    <body>
+      <div class="bg"></div>
+      <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a class="active" href="search.html">Search</a>
+   <!--     <a href="lastfm.html">Data</a> -->
+        <div class="search-container">
+          <form>
+            <input type="text" placeholder="Search..." id="search">
+            <button type="submit" value="Search"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <button class="dropdown-btn">Learn Instrument<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">                   
+   <!--       <div class="btn-group"><button onclick="instrument('violin+guide',12)">Violin</a></div> -->
+        <button class="dropdown-btns">Violin<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-containers">  
+        <div class="btn-group"><button onclick="instrument('violin beginner guide',12)">Beginner</a></div>
+          <button class="dropdown-btns">Channels to watch<i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-containerss">  
+          <div class="btn-group"><button onclick="channelplaylist(twoset,12)">TwoSetViolin</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(eddyc,12)">Eddy Chen</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(jlee,12)">Joy Lee</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(mma,12)">Murphy Music Academy</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(profv,12)">professorV</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(rdessert,12)">Red Desert Violin</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(ross,12)">Ros Stephen</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(violinpiano,12)">The Online Piano & Violin Tutor</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(vlab,12)">Violin Lab Channel</a></div>
+          </div> 
+        </div>  
+        <button class="dropdown-btns">Piano<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-containers">  
+        <div class="btn-group"><button onclick="instrument('piano beginner guide',12)">Beginner</a></div>
+          <button class="dropdown-btns">Channels to watch<i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-containerss">  
+          <div class="btn-group"><button onclick="channelplaylist(bhill,12)">Bill Hilton</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(cmusic,12)">cedarvillemusic</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(danielb,12)">Daniel Barenboim </a></div>
+          <div class="btn-group"><button onclick="channelplaylist(glenng,12)">Glenn Gould</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(hacad,12)">Hoffman Academy</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(jwright,12)">Josh Wright</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(nsol,12)">Nahre Sol</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(ptv,12)">pianoTV</a></div>
+          </div> 
+        </div>  
+        <button class="dropdown-btns">Guitar<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-containers">  
+        <div class="btn-group"><button onclick="instrument('guitar beginner guide',12)">Beginner</a></div>
+          <button class="dropdown-btns">Channels to watch<i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-containerss">  
+          <div class="btn-group"><button onclick="channelplaylist(beller,12)">Ben Eller</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(daves,12)">Dave Simpson</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(jguitar,12)">JustinGuitar</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(pdavids,12)">Paul Davids</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(robs,12)">Rob Scallon</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(signals,12)">Signals Music Studio</a></div>
+          </div> 
+        </div>  
+        </div>
+ 
+        <button class="dropdown-btn">Music Theory<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">                   
+          <div class="btn-group"><button onclick="playlists('music theory beginner',12)">Beginner</a></div>
+          <div class="btn-group"><button onclick ="topenNav()">Advanced</button></div>
+          <button class="dropdown-btns">Channels to watch<i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-containers">  
+          <div class="btn-group"><button onclick="channelplaylist(aimee,12)">Aimee Nolte Music</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(andrewf,12)">Andrew Furmanczyk</a></div>  
+          <div class="btn-group"><button onclick="channelplaylist(guym,12)">Guy Michelmore</a></div>  
+          <div class="btn-group"><button onclick="channelplaylist(mnew,12)">Michael New</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(rickb,12)">Rick Beato</a></div>                  
+          </div>
+        </div>
+        <button class="dropdown-btn">Poetry<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-containers">  
+          <div class="btn-group"><button onclick="channelplaylist(bpoetry,12)">Button Poetry</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(sixm,12)">SixMinuteScholar</a></div>
+          <div class="btn-group"><button onclick="channelplaylist(wam,12)">Write About Now</a></div>    
+          <div class="btn-group"><button onclick="reviews(yalec,12)">Yale Courses</a></div>                   
+          </div>  
+        <button class="dropdown-btn">Album Reviews<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+          <div class="btn-group"><button onclick="reviews(hiphop,12)">Hip Hop</a></div>
+          <div class="btn-group"><button onclick="reviews(pop,12)">Pop</a></div>
+          <div class="btn-group"><button onclick="reviews(rock,12)">Rock</a></div>
+          <div class="btn-group"><button onclick="reviews(loudrock,12)">Loud Rock</a></div>
+          <div class="btn-group"><button onclick="reviews(electronic,12)">Electronic</a></div>
+          <div class="btn-group"><button onclick="reviews(other,12)">Other</a></div>
+      </div>
+      <button class="dropdown-btn">Discussion & Analysis<i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-containers">  
+        <div class="btn-group"><button onclick="channelplaylist(aneely,12)">Adam Neely</a></div> 
+        <div class="btn-group"><button onclick="channelvideos(asound,12)">AuthenticSound</a></div>   
+        <div class="btn-group"><button onclick="channelplaylist(dcuts,12)">deep cuts</a></div>
+        <div class="btn-group"><button onclick="channelplaylist(fantano,12)">fantano</a></div>  
+        <div class="btn-group"><button onclick="channelplaylist(poly,12)">Polyphonic</a></div>  
+        <div class="btn-group"><button onclick="channelplaylist(samuela,12)">Samuel Andreyev</a></div> 
+        <div class="btn-group"><button onclick="channelvideos(sidew,12)">Sideways</a></div>
+        <div class="btn-group"><button onclick="channelplaylist(roomie,12)">RoomieOffical</a></div>               
+        </div>
+      </div>
+
+      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      <div id="main">   
+        <div id="myNav" class="overlay">
+
+          <!-- Button to close the overlay navigation -->
+          <a href="javascript:void(0)" class="closebtn" onclick="tcloseNav()">&times;</a>
+  
+          <!-- Overlay content -->
+          <div class="overlay-content">
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+  <!--          <ul class="overlay-content" id="myMenu">
+              <li><button class="dropdown-btn">Fundementals<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-container"> -->
+                  <div class="rows">
+                    <div class="column">
+                      <h1>Fundementals</h1>
+                      <br>
+                        <div class="btn-group"><button onclick="theorySearch('music theory fundementals',12)">General</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('basic notation '+mt,12)">Basic notation</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('meter'+mt,12)">Meter</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('protonotation'+mt,12)">Protonotation</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('rhythmi values'+mt,12)">Rhythmic values</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('beams and borrowed divisions'+mt,12)">Beams and borrowed divisions</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('pitches'+mt,12)">Pitches</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('scales and scale degrees'+mt,12)">Scales and scale degrees</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('key signatures'+mt,12)">Key signatures</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('intervals'+mt,12)">Intervals</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('triads and seventh chords'+mt,12)">Triads and seventh chords</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('types of motion'+mt,12)">Types of motion</a></div>
+                          <p></p><br>
+                      <h1>Harmony</h1>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('harmony music theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Introduction to musical functions',12)">Introduction to musical functions</div>
+                      <div class="btn-group"><button onclick="theorySearch('Harmonic functions music',12)">Harmonic functions</div>
+                      <div class="btn-group"><button onclick="theorySearch('Harmonic syntax the idealized phrase music',12)">Harmonic syntax - the idealized phrase</div>
+                      <div class="btn-group"><button onclick="theorySearch('Harmonic syntax prolongation music',12)">Harmonic syntax - prolongation</div>
+                      <div class="btn-group"><button onclick="theorySearch('Performing a harmonic analysis music',12)">Performing a harmonic analysis</div>
+                      <div class="btn-group"><button onclick="theorySearch('Classical cadence types music',12)">Classical cadence types</div>
+                      <div class="btn-group"><button onclick="theorySearch('Chromatically altered subdominant chords music',12)">Chromatically altered subdominant chords</div>
+                      <div class="btn-group"><button onclick="theorySearch('Applied chords music',12)">Applied chords</div>
+                      <div class="btn-group"><button onclick="theorySearch('Modal mixture music',12)">Modal mixture</div>
+                      <div class="btn-group"><button onclick="theorySearch('Modulation music',12)">Modulation</div>
+                        <p></p><br>
+                      <h1>Form</h1>
+                      <br>
+                      <h2>Thematic Structure in the Classical Style</h2>
+                      <br>
+                      <h3>Classical theme types</h3>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('classical theme types music theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('The sentence classical music',12)">The sentence</div>
+                      <div class="btn-group"><button onclick="theorySearch('The period music classical',12)">The period</div>
+                      <div class="btn-group"><button onclick="theorySearch('Hybrid themes music classical',12)">Hybrid themes</div>
+                      <div class="btn-group"><button onclick="theorySearch('Compound periods music classical',12)">Compound periods</div>
+                      <div class="btn-group"><button onclick="theorySearch('Compound sentences music classical',12)">Compound sentences</div>
+                      <div class="btn-group"><button onclick="theorySearch('The small ternary music classical',12)">The small ternary</div>
+                      <div class="btn-group"><button onclick="theorySearch('The small binary music classical',12)">The small binary</div>
+                      <div class="btn-group"><button onclick="theorySearch('Theme type reference music classical',12)">Theme type reference</div>
+                      <div class="btn-group"><button onclick="theorySearch('Thematic function reference music classical',12)">Thematic function reference</div>
+                        <p></p><br>
+                      <h3>Techniques of Phrase Rhythm</h3>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('Techniques of Phrase Rhythm',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Phrase Rhythm External Expansions',12)">External Expansions</div>
+                      <div class="btn-group"><button onclick="theorySearch('Phrase Rhythm Internal Expansions',12)">Internal Expansions</div>
+                        <p></p><br>
+                      <h2>Sonata Form</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('sonata form music theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Introduction to Sonata Theory',12)">Introduction to Sonata Theory</div>
+                      <div class="btn-group"><button onclick="theorySearch('Sonata form exposition types',12)">Sonata form: exposition types</div>
+                      <div class="btn-group"><button onclick="theorySearch('sonata form Structural Points of Arrival',12)">Structural Points of Arrival</div>
+                      <div class="btn-group"><button onclick="theorySearch('sonata form Thematic Modules',12)">Thematic Modules</div>
+                      <div class="btn-group"><button onclick="theorySearch('Sonata form the recapitulation',12)">Sonata form: the recapitulation</div>
+                      <div class="btn-group"><button onclick="theorySearch('Sonata form the development',12)">Sonata form: the development</div>
+                      <div class="btn-group"><button onclick="theorySearch('Sonata form framing modules intro coda',12)">Sonata form: framing modules (intro & coda)</div>
+                        <p></p><br>
+                      <h2>Rondo Form</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('music theory rondo form',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Introduction to Rondo form',12)">Introduction to Rondo form</div>
+                      <div class="btn-group"><button onclick="theorySearch('Thematic Function in Rondo Form',12)">Thematic Function in Rondo Form</div>
+                      <div class="btn-group"><button onclick="theorySearch('Five-Part Rondo form',12)">Five-Part Rondo</div>
+                      <div class="btn-group"><button onclick="theorySearch('Sonata Rondo form',12)">Sonata Rondo</div>
+                        <p></p><br>
+                      <h2>Other formal structures in the classical style</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('formal structures in the classical style music',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Minuet form classical music',12)">Minuet form</div>
+                        <p></p><br>
+                      <h2>Galant Schemata</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('galant schemata music theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Galant schemata opens and closes',12)">Galant schemata – opens and closes</div>
+                      <div class="btn-group"><button onclick="theorySearch('Galant Schemata  continuation patterns',12)">Galant Schemata – continuation patterns</div>
+                      <div class="btn-group"><button onclick="theorySearch('Galant schemata summary',12)">Galant schemata – summary</div>
+                      <div class="btn-group"><button onclick="theorySearch('Improvising a sentence with galant schemata',12)">Improvising a sentence with galant schemata</div>
+                    </div>
+                    <div class="column">
+                      <h1>Voice-leading and model composition</h1>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('voice leading and model composition music theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Introduction to strict voice-leading',12)">Introduction to strict voice-leading</a></div>
+                        <p></p><br>
+                      <h2>Strict two-voice composition (species counterpoint)</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('species counterpoint music theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Composing a cantus firmus',12)">Composing a cantus firmus</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('Composing a first species counterpoint',12)">Composing a first-species counterpoint</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('Composing a second species counterpoint',12)">Composing a second-species counterpoint</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('Composing a third species counterpoint',12)">Composing a third-species counterpoint</a></div>
+                        <div class="btn-group"><button onclick="theorySearch('Composing a fourth species counterpoint',12)">Composing a fourth-species counterpoint</a></div> 
+                          <p></p><br>
+                      <h2>Strict four-voice composition</h2> 
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('four voice composition music theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Introduction to thoroughbass',12)">Introduction to thoroughbass</a></div>
+                      <div class="btn-group"><button onclick="theorySearch(' history of basso continuo',12)">A brief history of basso continuo</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Generating Roman numerals from a figured bass line',12)">Generating Roman numerals from a figured bass line</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Composing in basso continuo style',12)">Composing in basso-continuo style</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('four voice Style and tendency',12)">Style and tendency</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Tendency tones and functional harmonic dissonances',12)">Tendency tones and functional harmonic dissonances</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Realizing a figured bass in strict basso continuo style',12)">Realizing a figured bass in strict basso continuo style</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Melodic keyboard style voice-leading',12)">Melodic keyboard style voice-leading</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Melodic keyboard-style voice-leading schemata',12)">Melodic keyboard-style voice-leading schemata</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Realizing a figured bass line in melodic keyboard style',12)">Realizing a figured bass line in melodic keyboard style</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Realizing an unfigured bass line',12)">Realizing an unfigured bass line</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Embellishing tones'+mt,12)">Embellishing tones</a></div>
+                        <p></p><br>
+                      <h1>Post-tonal music</h1>
+                      <div class="btn-group"><button onclick="theorySearch('post tonal music theory',12)">General</a></div>
+                      <br>
+                      <h2>Basics</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('post tonal Pitch (class)',12)">Pitch (class)</div>
+                      <div class="btn-group"><button onclick="theorySearch('post tonal Interval (class)',12)">Interval (class)</div>
+                      <div class="btn-group"><button onclick="theorySearch('post tonal Modular 12 arithmetic',12)">Modular 12 arithmetic</div>
+                        <p></p><br>
+                      <h2>Organizing Forces</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('Organizing Forces Collections and Scales',12)">Collections and Scales</div>
+                      <div class="btn-group"><button onclick="theorySearch('Symmetry and Centricity',12)">Symmetry and Centricity</div>
+                        <p></p><br>
+                      <h2>Set Theory</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('set theory music',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Pitch-Class Sets',12)">Pitch-Class Sets</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Normal Order',12)">Normal Order</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Tranposition',12)">Tranposition</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Inversion',12)">Inversion</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Set Class and Prime Form',12)">Set Class and Prime Form</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Set Class and Prime Form',12)">Set Class and Prime Form</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Complements',12)">Complements</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Common Tones under Transposition',12)">Common Tones under Transposition</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Common Tones under Inversion',12)">Common Tones under Inversion</div>
+                      <div class="btn-group"><button onclick="theorySearch('Set Theory Tranpositional Symmetry',12)">Tranpositional Symmetry</div>
+                        <p></p><br>
+                      <h2>Twelve-Tone Theory</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('music twelve tone theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Twelve Tone Theory Basics',12)">Basics</div>
+                      <div class="btn-group"><button onclick="theorySearch('Twelve Tone Theory Operations',12)">Operations</div>
+                      <div class="btn-group"><button onclick="theorySearch('Twelve Tone Theory Intervallic Structure',12)">Intervallic Structure</div>
+                      <div class="btn-group"><button onclick="theorySearch('Twelve Tone Theory Derivation',12)">Derivation</div>
+                      <div class="btn-group"><button onclick="theorySearch('Twelve Tone Theory Invariance',12)">Invariance</div>
+                        <p></p><br>
+                      <h2>General post-tonal resources</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('post tonal resources music theory',12)">General</a></div>
+                      <div class="btn-group"><button onclick="theorySearch('Analyzing a post-tonal piece from scratch',12)">Analyzing a post-tonal piece from scratch</div>
+                      <div class="btn-group"><button onclick="theorySearch('Analyzing atonal music',12)">Analyzing atonal music</div>
+                      <div class="btn-group"><button onclick="theorySearch('Analyzing 12-tone music',12)">Analyzing 12-tone music</div>
+                      <div class="btn-group"><button onclick="theorySearch('Glossary of atonal musical terms',12)">Glossary of atonal musical terms</div>
+                      <div class="btn-group"><button onclick="theorySearch('Sheet of blank chromatic scale clock faces',12)">Sheet of blank chromatic-scale clock faces</div>
+                        <p></p><br>
+                      <h1>Pop/Rock music</h1>
+                      <br>
+                      <h2>Rhythm</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('Syncopation in pop/rock music',12)">Syncopation in pop/rock music</div>
+                      <h2>Harmony</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('Harmony in pop/rock music',12)">Harmony in pop/rock music</div>
+                      <div class="btn-group"><button onclick="theorySearch('The 50s doo wop progression',12)">The “50s doo-wop” progression</div>
+                      <div class="btn-group"><button onclick="theorySearch('The Singer/Songwriter progression',12)">The “Singer/Songwriter” progression</div>
+                      <div class="btn-group"><button onclick="theorySearch('The Puff progression',12)">The “Puff” progression</div>
+                      <div class="btn-group"><button onclick="theorySearch('The blues progression',12)">The blues progression</div>
+                      <div class="btn-group"><button onclick="theorySearch('The lament progression',12)">The lament progression</div>
+                      <div class="btn-group"><button onclick="theorySearch('The circle-of-fifths progression (in minor)',12)">The circle-of-fifths progression (in minor)</div>
+                      <div class="btn-group"><button onclick="theorySearch('Plagal progressions',12)">Plagal progressions</div>
+                        <p></p><br>
+                      <h2>Form</h2>
+                      <br>
+                      <div class="btn-group"><button onclick="theorySearch('Form in pop/rock music overview',12)">Form in pop/rock music – overview</div>
+                      <div class="btn-group"><button onclick="theorySearch('pop/rock Terminology and basic concepts',12)">Terminology and basic concepts</div>
+                      <div class="btn-group"><button onclick="theorySearch('pop/rock Formal containers and module structures',12)">Formal containers and module structures</div>
+                      <div class="btn-group"><button onclick="theorySearch('pop/rock Formal functions',12)">Formal functions</div>
+                      <div class="btn-group"><button onclick="theorySearch('pop/rock Analytical notation',12)">Analytical notation</div>
+                    </div>
+                  </div>                             
+          </div>   
+  </div>     
+ <!--       <input class="subsearch" type="text" name="subsearch" placeholder="Search.."> -->
+        <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+        <!-- The overlay -->
+       
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="videos"></div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/search.js"></script>
+</html>
