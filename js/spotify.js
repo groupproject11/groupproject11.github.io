@@ -7,6 +7,8 @@ var song = ''
 var type = ''
 var feature = ''
 
+var ykey = 'AIzaSyD2S_XCwg9bfUZlRwy9QTlSYxjH2fCDahg'
+
 var genius_access_token = 'KlA-KnATKEW6M2FOaN1cA3-p1hhWARQA60OkWM-AdeMFPbWzB3_ZQAf2QyD0vtNH'
 
 // get tokens from url 
@@ -2198,6 +2200,15 @@ function off() {
   document.getElementById("overlay").style.display = "none";
 }
 
+function von(m_vid) {
+  document.getElementById("voverlay").style.display = "block";
+  musicvideo(m_vid)
+}
+
+function voff() {
+  document.getElementById("voverlay").style.display = "none";
+}
+
 // search function with selected type
 $(document).ready(function(){
 
@@ -2227,13 +2238,16 @@ $(document).ready(function(){
               `               
              
               featurebutton = `
+              
               <div class="btn-group">
               
               <button onclick="onf('${item.id}')" class="featuresinfo" id="featuresinfo">Features</button>
               <button onclick="ona('${item.id}')" class="analysisinfo" id="analysisinfo">Analysis</button>
-              <button onclick="onl('${item.artists[0].name} ${item.name}')" class="lyricsinfo" id="lyrics">Lyrics</button> 
+              <button onclick="onl('${item.artists[0].name} ${item.name}')" class="lyricsinfo" id="lyrics">Lyrics</button>
+              <button onclick="von('${item.artists[0].name} ${item.name}')" class="videoinfo" id="mvideo">Video</button>
               </div>  
               <div id="overlay" onclick="off()">
+              <div id="voverlay" onclick="voff()">
               <div id="text"></div>
               </div>                
               `
@@ -2279,4 +2293,15 @@ function lyrics (song) {
     `
     $("#text").html(glyric)
   })
+};
+
+function musicvideo (m_vid){
+  $.get(" https://www.googleapis.com/youtube/v3/search?key="+ ykey +"&type=video&part=snippet&maxResults=1&q="+m_vid,function(data){
+    console.log(data)
+
+    music_video =  `
+    <iframe width="720" height="480" src="http://www.youtube.com/embed/${data.items[0].id.videoId}" frameborder="0"  allowfullscreen></iframe>
+    `   
+    $("#mvideo").html(music_video)     
+})
 };
