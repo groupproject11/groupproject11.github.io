@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '8aeaf0542e60403db5f7b4aa7e8e27b5'; // Your client id
 var client_secret = '02e5f92c313540a3beffb2b4356bef62'; // Your secret
-var redirect_uri = 'https://groupproject11.github.io'; // Your redirect uri
+var redirect_uri = 'https://groupproject11.github.io/callback/'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -104,7 +104,7 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('https://groupproject11.github.io' +
+        res.redirect('https://groupproject11.github.io/' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
