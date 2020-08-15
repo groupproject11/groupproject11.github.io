@@ -2313,10 +2313,10 @@ var emotion,happy,sad,angry,fear,neutral;
 
 function cam(){
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('./models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('./models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('/js/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/js/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/js/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/js/models')
 ]).then(startVideo)
 
 
