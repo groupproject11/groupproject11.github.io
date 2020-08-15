@@ -13,6 +13,28 @@ body {
   background-size: cover;
   background-attachment: fixed;
   }
+
+.camb{
+    position: relative;
+    z-index: 1000;
+    top: 40px;
+    left: 1200px;
+  }
+
+  .video{
+    position: relative;
+    z-index: 100;
+    top: 10px;
+    left: 200px;
+  }
+
+  canvas {
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    left: 200px;
+  }
+  
   
   .bg-text {
     background-color: rgb(0,0,0); /* Fallback color */
