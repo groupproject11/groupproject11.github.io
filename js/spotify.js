@@ -2167,9 +2167,12 @@ spotifyApi.getPlaylistTracks('4KbVm88FtGdO3pGRwkCWko',{limit:12},function(err,da
         <button onclick="onl('${item.track.artists[0].name} ${item.track.name}')" class="lyricsinfo" id="lyrics">Lyrics</button> 
         <button onclick="von('${item.track.artists[0].name} ${item.track.name}')" class="videoinfo" id="mvideo">Video</button>
         </div>   
-        <div class="overlay "id="overlay" onclick="off()">
-        <div id="text"></div>
-        </div>               
+        <div id="overlay" onclick="off()">
+              <div id="text">
+              </div>
+              <div id="voverlay" onclick="voff()">
+              
+              </div>                 
         `
 
        $("#buttons").append(featurebutton)     
@@ -2248,8 +2251,10 @@ $(document).ready(function(){
               <button onclick="von('${item.artists[0].name} ${item.name}')" class="videoinfo" id="mvideo">Video</button>
               </div>  
               <div id="overlay" onclick="off()">
+              <div id="text">
+              </div>
               <div id="voverlay" onclick="voff()">
-              <div id="text"></div>
+              
               </div>                
               `
               
@@ -2395,3 +2400,17 @@ function startVideo(){
       })
       
     }
+
+
+
+
+
+  
+
+
+   
+
+      
+
+
+
