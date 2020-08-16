@@ -1,5 +1,5 @@
 var params = getHashParams();
-var access_token = 'params.access_token',
+var access_token = 'BQBPjlVTbnxARK1_rk8FMft_q2_x6zJT7NaT3cBZZtgOg5ncB2BNYeCoI8G1rxMTiDDQCv6sf31kbo3idIf4LRuLT2E_kY5N6ISVRz8Wcll6WAZqNeqjBsOMqB5flWJbaSGMng0YAEztHEXWIlSndCLHgGnZlcc',
     refresh_token = params.refresh_token,
     error = params.error;
 
