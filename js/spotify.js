@@ -1,3 +1,5 @@
+
+
 var params = getHashParams();
 var access_token = 'BQBPjlVTbnxARK1_rk8FMft_q2_x6zJT7NaT3cBZZtgOg5ncB2BNYeCoI8G1rxMTiDDQCv6sf31kbo3idIf4LRuLT2E_kY5N6ISVRz8Wcll6WAZqNeqjBsOMqB5flWJbaSGMng0YAEztHEXWIlSndCLHgGnZlcc',
     refresh_token = params.refresh_token,
@@ -2150,7 +2152,7 @@ function features (features_id){
 
 
 
-
+function sinhala(){
 spotifyApi.getPlaylistTracks('4KbVm88FtGdO3pGRwkCWko',{limit:12},function(err,data){
     if (err) console.error(err);
     else console.log(data);
@@ -2162,8 +2164,7 @@ spotifyApi.getPlaylistTracks('4KbVm88FtGdO3pGRwkCWko',{limit:12},function(err,da
         <div class="btn-group">
         
         <button onclick="onf('${item.track.id}')" class="featuresinfo" id="featuresinfo">Features</button>
-        <button onclick="ona('${item.track.id}')" class="analysisinfo" id="analysisinfo">Analysis</button>
-        <button onclick="onl('${item.track.artists[0].name} ${item.track.name}')" class="lyricsinfo" id="lyrics">Lyrics</button>
+        <button onclick="onl('${item.track.artists[0].name} ${item.track.name}')" class="lyricsinfo" id="lyrics">Lyrics</button> 
         <button onclick="von('${item.track.artists[0].name} ${item.track.name}')" class="videoinfo" id="mvideo">Video</button>
         </div>   
         <div class="overlay "id="overlay" onclick="off()">
@@ -2180,6 +2181,8 @@ spotifyApi.getPlaylistTracks('4KbVm88FtGdO3pGRwkCWko',{limit:12},function(err,da
     
     
 });
+
+}
 
 function onf(feature_id) {
   document.getElementById("overlay").style.display = "block";
@@ -2219,9 +2222,7 @@ $(document).ready(function(){
       Search(search)
   });
 
-  function button (featurebutton){
-    $("#songs").append(featurebutton)
-  }
+
 
   function Search(search){
       selectType();
@@ -2243,9 +2244,8 @@ $(document).ready(function(){
               <div class="btn-group">
               
               <button onclick="onf('${item.id}')" class="featuresinfo" id="featuresinfo">Features</button>
-              <button onclick="ona('${item.id}')" class="analysisinfo" id="analysisinfo">Analysis</button>
               <button onclick="onl('${item.artists[0].name} ${item.name}')" class="lyricsinfo" id="lyrics">Lyrics</button>
-              <button onclick="von('${item.artists[0].name} ${item.name}')" class="videoinfo" id="bmvideo">Video</button>
+              <button onclick="von('${item.artists[0].name} ${item.name}')" class="videoinfo" id="mvideo">Video</button>
               </div>  
               <div id="overlay" onclick="off()">
               <div id="voverlay" onclick="voff()">
@@ -2253,7 +2253,7 @@ $(document).ready(function(){
               </div>                
               `
               
-              button(featurebutton);
+              $("#songs").append(featurebutton)
               $("#songs").append(song)
           
          });
@@ -2301,22 +2301,38 @@ function musicvideo (m_vid){
     console.log(data)
 
     music_video =  `
-    <iframe width="720" height="480" src="https://www.youtube.com/embed/${data.items[0].id.videoId}" frameborder="0"  allowfullscreen></iframe>
+    <iframe width="720" height="480" src="http://www.youtube.com/embed/${data.items[0].id.videoId}" frameborder="0"  allowfullscreen></iframe>
     `   
     $("#mvideo").html(music_video)     
 })
 };
 
 const video = document.getElementById('video')
-var emotion,happy,sad,angry,fear,neutral;
+var emotion=0,happy=0,sad=0,angry=0,fear=0,neutral=0;
 
+function emotionplaylist(emo){
+  $.get("https://api.spotify.com/v1/search?q="+emo+" mood&type=playlist&limit=12&access_token="+access_token,function(data){
+    console.log(data);
+    $("#songs").empty()
+    $("#album").empty()
+    $("#playlist").empty()
+    data.playlists.items.forEach(item => {
+      playlist =  `
+      <iframe src="https://open.spotify.com/embed/playlist/${item.id}" width="300" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      `               
+      $("#playlist").append(playlist)
+
+
+  })
+}
+  )}
 
 function cam(){
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('/js/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('/js/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('/js/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('/js/models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('./models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('./models')
 ]).then(startVideo)
 
 
@@ -2330,27 +2346,52 @@ function startVideo(){
             console.log("Something went wrong!");
           });
       }
+
     } 
 
-     
+
+
     video.addEventListener('play', () => {
-        const canvas = faceapi.createCanvasFromMedia(video)
+        const canvas = faceapi.createCanvasFromMedia(video);
         document.body.append(canvas)
         const displaySize = { width: video.width, height: video.height }
         faceapi.matchDimensions(canvas, displaySize)
-        setInterval(async () => {
+        var you = setInterval(async () => {
           const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
           const resizedDetections = faceapi.resizeResults(detections, displaySize)
           canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
-          faceapi.draw.drawDetections(canvas, resizedDetections)
-          faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-          faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+        //  faceapi.draw.drawDetections(canvas, resizedDetections)
+        //  faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
+         // faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
           
+          happy =  happy + detections[0].expressions. happy
+          sad = sad + detections[0].expressions.sad
+          angry = angry + detections[0].expressions.angry
+          neutral = neutral + detections[0].expressions.neutral
+
+          var emotions = [
+            {label: 'Happy', value: happy },
+            {label: 'Sad', value: sad },
+            {label: 'Angry', value: angry },
+            {label: 'Neutral', value: neutral }
+          ];
+
+          var max = Math.max.apply(null, emotions.map(v => v.value));
+          console.log(max);
+
+          var maxObject = emotions.find(n => n.value === max);
+          console.log(maxObject.label);
+
+          if(max > 5){
+            clearInterval(you);
+            $("#video").remove();
+            emotionplaylist(maxObject.label);
+          }
+
+        }, 500)
+
        
-          console.log(detections[0].expressions)
-          
-        }, 100)
      
       })
+      
     }
-
