@@ -1,7 +1,7 @@
 
 
 var params = getHashParams();
-var access_token = 'BQB0rYC3pNcsU1z-Vnl14oPbyJ4JFnB3CGB6oUj6crAHuV2VHpoN8kHE6XsOYvSQFDa_dk0FVd824AX1tsZ7dURNaYyXtdCLZ3vWpMNCNiG7D09uYzlCcHIPQmqfatyWnVqfkhzYG8OrIlWCJHF08BP_lsI4ABM',
+var access_token = 'BQCHfqgRD4hWBmeKtK_G8FtJ8TeZY4ClCzEw6ZSaZaTi5kTC3yTuVsiE0tFvgMqHusFgbcFvbu6reGwOl9z6nFzDyDbaAE8NIyAVvHiU2UIxCyTNDlB_NUwz8deMeBm0GEQlJyRI6qU92O0AJBnnkNQxqLLZiZI',
     refresh_token = params.refresh_token,
     error = params.error;
 
